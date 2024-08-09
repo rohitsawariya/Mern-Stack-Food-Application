@@ -1,0 +1,28 @@
+/* navbar.css */
+.navbar {
+    background-color: #343a40; /* Dark background */
+  }
+  
+  .navbar-brand {
+    font-family: 'Brush Script MT', cursive; /* Custom font for brand */
+  }
+  
+  .nav-link {
+    font-size: 1.1rem; /* Slightly larger font size for nav links */
+  }
+  
+  .nav-link:hover {
+    color: #f8f9fa; /* Light color on hover */
+    text-decoration: underline; /* Underline effect on hover */
+  }
+  
+  .navbar-toggler-icon {
+    filter: invert(1); /* Invert color for better visibility */
+  }
+  
+  @media (max-width: 992px) {
+    .navbar-nav {
+      text-align: center; /* Center links on small screens */
+    }
+  }
+  
