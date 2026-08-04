@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Modal from '../Modal';
 import Cart from '../screens/Cart';
@@ -9,11 +9,25 @@ function Navbar() {
   const navigate = useNavigate();
   let data = useCart();
   const location = useLocation();
+  const [username, setUsername] = useState('');
 
   const handleLogout = () => {
     localStorage.removeItem("authToken");
     navigate("/login");
   }
+  useEffect(() => {
+  const emaill = localStorage.getItem("userEmail");
+  if (emaill) {
+    const usernameBeforeAt = emaill.split('@')[0];
+    const capitalized =
+      usernameBeforeAt.charAt(0).toUpperCase() + usernameBeforeAt.slice(1);
+
+    setUsername(capitalized);
+  }
+}, [location]);
+
+
+
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -63,8 +77,10 @@ function Navbar() {
               </Link>
             </div>
             :
-            <div>
-              <button type="button" className ="btn btn-primary position-relative" onClick={() => { setCartView(true) }}>
+            <div className='d-flex align-items-center'>
+              <h4 className="text-white mt-2">Hey {username},</h4>
+
+              <button type="button" className ="btn btn-primary position-relative mx-2" onClick={() => { setCartView(true) }}>
                 My Cart
                 <span className ="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                   {data.length}

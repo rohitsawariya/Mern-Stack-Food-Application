@@ -16,6 +16,8 @@ import Footer from './components/Footer';
 
 
 function App() {
+
+  // rohan1@gmail.com 123456
   return (
     <CartProvider>
    <Router>

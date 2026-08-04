@@ -11,7 +11,7 @@ function Home() {
   const loadData = async () => {
     try {
       let response = await fetch("http://localhost:5000/api/fooddata", {
-        method: "POST",
+        method: "GET",
         headers: {
           'Content-Type': 'application/json'
         }
@@ -57,7 +57,7 @@ function Home() {
                 />
               </div>
             </div>
-            <div className="carousel-item">
+            <div className="carousel-item active">
               <img
                 src="https://images.unsplash.com/photo-1590947132387-155cc02f3212?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 className="d-block w-100"
@@ -65,7 +65,7 @@ function Home() {
                 alt="..."
               />
             </div>
-            <div className="carousel-item active">
+            <div className="carousel-item">
               <img
                 src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 className="d-block w-100"
